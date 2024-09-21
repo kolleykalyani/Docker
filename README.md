@@ -22,4 +22,27 @@ docker images
 docker ps
 ```
 
+* To list only the stopped Docker containers
+
+```
+docker ps -a --filter "status=exited"
+```
+
+* To list only the running Docker containers
+
+```
+docker ps -a --filter "status=running"
+```
+
+* Filters containers which share a specific image as an ancestor
+
+```
+docker ps --filter ancestor=httpd
+```
+
+* To filter and list Docker images that are specifically related to alpine or specific image
+
+```
+docker images --filter reference=alpine
+```
 

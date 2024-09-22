@@ -65,7 +65,7 @@ docker inspector
 * To create a container from the specific image we need to run
 
 ```
-docker run -dt --name containername -p 80:80 imagename/ID
+docker run -dt --name containername -p 80:80e imagename/ID
 ```
 
 * To stop the container
@@ -74,6 +74,44 @@ docker run -dt --name containername -p 80:80 imagename/ID
 docker stop containername/ID
 ```
 
+* To expose the port number of the container we use "-p" flag.
 
+* -d flag represents the container will be created in detached mode, whcih means it will only create the container but cannot enter into it.
 
+* To see the list of ID's that are associated with the containers which are currently present in the work station.
 
+```
+docker container ls -aq
+```
+
+* To stop the containers bulky at a time.
+
+```
+docker container stop $(docker contaoner ls -aq)
+```
+
+* To remove a specific exited container.
+
+```
+docker cotainer rm containername/ID
+```
+
+* To remove exited containers bulky which are not required.
+
+```
+docker container rm $(docker container ls -aq)
+```
+
+* To enter inside the container and access the things inside the container we use.
+
+```
+docker exec -it containername
+```
+
+* To see if the nginx image is running or not inside the container.
+
+```
+/etc/init.d/nginx
+```
+
+* 

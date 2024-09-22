@@ -22,6 +22,17 @@ docker images
 docker ps
 ```
 
+* To list the containers that are in running state or exited state
+
+```
+docker ps -a
+```
+* to start the container
+
+```
+docker start containername/ID
+```
+
 * To list only the stopped Docker containers
 
 ```
@@ -45,4 +56,24 @@ docker ps --filter ancestor=httpd
 ```
 docker images --filter reference=alpine
 ```
+* To get more info about docker container like ip address
+
+```
+docker inspector
+```
+
+* To create a container from the specific image we need to run
+
+```
+docker run -dt --name containername -p 80:80 imagename/ID
+```
+
+* To stop the container
+
+```
+docker stop containername/ID
+```
+
+
+
 

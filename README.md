@@ -114,4 +114,88 @@ docker exec -it containername
 /etc/init.d/nginx
 ```
 
+* "-i" flag keeps stdin open if not attached.
+
+* "-t" flag allocates a pseudo tty.
+
+* To overwrite the default container command that is present in the docker image
+
+```
+docker container run -d imagename sleep500 (default container command )
+```
+### Note: If the sleep500 completes then the pid1 running will be exited then the container also will be exited. 
+
+* To know the cpu utilization of conatiner we need to install htop tool inside the container then just type htop we can see the things.(it works for single container)
+
+```
+htop
+```
+
+* By default, docker containers will not start when they exit or when docker daemon is restarted. Docker provides restart policies to control whether your container will automatically when they exot or restarted.
+
+* We can specify the restart policy by using --restart flag with docker run command.
+
+*  "no" flag : do not automatically restart the container (the default one).
+
+*  "on-failure" : restart the container if it exits due to an error, which manifests as a non-zero exit code.
+
+*  "unless-stopped" : restart the container unless it is explicitly stopped or docker itself is stopped or restarted.
+
+*  "always" : aleways restart the container if it stops.
+
+*  To restart the container to automatically restart if container or daemon is restarted or it is stopped.
+
+```
+docekr container run -d --restart unless-stopped imagename
+```
+
+* To know the docker components level of disk usage or disk metrix of docker components and containers
+
+```
+docker system df
+```
+
+* To create a file inside the container.
+
+```
+dd if=/dev/zero of=bigfile.txt bs=1M count=500
+```
+
+* dd: A Unix utility used to convert and copy files, often used for tasks like creating disk images or large files for testing purposes.
+
+* if=/dev/zero: The input file (if=) is /dev/zero, which is a special file in Unix-like systems that provides an endless stream of null (zero) bytes.
+
+* of=bigfile.txt: The output file (of=) is bigfile.txt. This is where the data from /dev/zero will be written, creating a file filled with zero bytes.
+
+* bs=iM: This specifies the block size (bs=) for the dd command.where M refers to megabytes). It sets the amount of data to read and write in each block. For example, bs=1M would mean 1 megabyte per block.
+
+* count=500: This specifies the number of blocks to copy. In this case, it would copy 500 blocks of size bs.
+
+* If teh ten containers are running and we want to know which container is using more disk usage and to know component level disk usage 
+
+```
+docker system df -v
+```
+
+* To automatically remove a container when it exits after the job is done
+
+```
+docker container run -dt --rm --name containername imagename defaultcommand 
+```
+
+### Docker file 
+
+* Docker file is a text document that contains all the commands a user could call on the command line to assemble an image.
+
+* To build the docker or do the docker build
+
+```
+docker build -t imagename .
+```
+
 * 
+
+
+
+
+

@@ -1,5 +1,9 @@
 # Docker
 
+### what is container ?
+
+The word “container” doesn’t mean anything super precise. Basically there are a few new Linux kernel features (“namespaces” and “cgroups”) that let you isolate processes from each other. When you use those features, you call it “containers”.
+
 ### Docker image 
 
 Docker image is a file which contains all binaries, dependencies and configurations which are required to run an application.Docker container is basically a running instance an image.

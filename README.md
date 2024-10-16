@@ -100,6 +100,12 @@ docker container stop $(docker contaoner ls -aq)
 docker cotainer rm containername/ID
 ```
 
+* To Remove the stopped containers
+
+```
+docker system prune
+```
+
 * To remove exited containers bulky which are not required.
 
 ```

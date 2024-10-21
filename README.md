@@ -203,7 +203,16 @@ docker container run -dt --rm --name containername imagename defaultcommand
 docker build -t imagename .
 ```
 
-* 
+* COPY and ADD both are dockerfile instructions that server similar purposes. They let us copy files from a specific location to docker image.
+
+### Difference b/w COPY and ADD ?
+
+* **COPY** takes in source and destination. It only let us copy in a  local file or directory from our host.
+
+* **ADD** also does the same but supports another 2 features.
+
+> We can use an URL instead of file or directory.
+> Also we can extract the tar file from the source directly into the destination.
 
 
 
